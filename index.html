@@ -5,19 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
     <title>Dynamic Data Visualization Dashboard</title>
 </head>
 <body onload="main()">
     <h1>Dynamic Stock Dashboard</h1>
     <form id="stockControls">
         <label for="selectStock">Select Stock:</label>
-        <select name="selectStock" id="selectChoice" ></select>
+        <select name="selectStock" id="selectStock" required>
+            <option value="">Select a stock</option>
+            <option value="Apple">Apple</option>
+            <option value="Google">Google</option>
+        </select>
 
-        <label for="dateOptions">Date options:</label>
-        <input type="date" id="beginningStockDate">
-        <input type="date" id="endingStockDate">
+        <label for="begDate">Beginning date:</label>
+        <select name="begDate" id="begDate" required>
+            <option value="">Select a date</option>
+            <option value="1">2023-01-01</option>
+            <option value="2">2023-01-02</option>
+            <option value="3">2023-01-03</option>
+            <option value="4">2023-01-04</option>
+        </select>
 
-        <input type="submit" value="submit">
-    </form>
+        <label for="endDate">Ending date:</label>
+        <select name="endDate" id="endDate" required>
+            <option value="">Select a date</option>
+            <option value="1">2023-01-01</option>
+            <option value="2">2023-01-02</option>
+            <option value="3">2023-01-03</option>
+            <option value="4">2023-01-04</option>
+            <option value="5">2023-01-05</option>
+        </select><br>
+
+        <button type="submit">Submit</button>
+    </form><br>
+    <div id="tooltip" class="hidden">
+        <p><span id="ttText"></span></p>
+    </div>
 </body>
 </html>
